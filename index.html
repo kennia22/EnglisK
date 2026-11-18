@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi clase de Inglés</title>
+<style>
+  body{font-family:Arial,sans-serif;margin:0;background:#f4f7fb;color:#222;line-height:1.5}
+  header{background:#1d4ed8;color:#fff;padding:20px;text-align:center}
+  nav{background:#1e3a8a;text-align:center;padding:10px;position:sticky;top:0}
+  nav a{color:#fff;margin:0 8px;text-decoration:none;font-weight:bold;font-size:14px;display:inline-block}
+  nav a:hover{text-decoration:underline}
+  section{max-width:900px;margin:20px auto;background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 6px #0002}
+  h2{color:#1d4ed8;border-bottom:2px solid #dbeafe;padding-bottom:6px}
+  img{max-width:100%;border-radius:8px}
+  .galeria{display:flex;gap:12px;flex-wrap:wrap}
+  .galeria figure{margin:0;flex:1 1 140px;text-align:center}
+  button{background:#1d4ed8;color:#fff;border:0;padding:8px 14px;border-radius:6px;cursor:pointer;margin:4px}
+  button:hover{background:#1e40af}
+  button.sec{background:#64748b}
+  video,audio{width:100%;margin-top:8px}
+  table{border-collapse:collapse;width:100%;margin:10px 0}
+  th,td{border:1px solid #cbd5e1;padding:7px;text-align:left}
+  th{background:#dbeafe}
+  label{display:block;margin-top:10px;font-weight:bold}
+  input[type=text],input[type=email],input[type=number],input[type=password],select,textarea{width:100%;max-width:420px;padding:7px;margin-top:4px;box-sizing:border-box}
+  fieldset{margin-top:12px;border:1px solid #cbd5e1;border-radius:8px}
+  .ok{color:green;font-weight:bold}.mal{color:red;font-weight:bold}
+  .caja{background:#eff6ff;padding:10px;border-left:4px solid #1d4ed8;margin:10px 0}
+  footer{text-align:center;padding:15px;color:#555}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📘 Mi clase de Inglés</h1>
+  <p>Vocabulario, gramática, audio, video, ejercicios y formularios</p>
+  <button onclick="saludar()">👋 Saludar</button>
+  <button class="sec" onclick="cambiarTema()">🌓 Cambiar tema</button>
+</header>
+
+<nav>
+  <a href="#saludos">Saludos</a>
+  <a href="#colores">Colores</a>
+  <a href="#numeros">Números</a>
+  <a href="#animales">Animales</a>
+  <a href="#verbtobe">Verb to be</a>
+  <a href="#presente">Present simple</a>
+  <a href="#fechas">Días y meses</a>
+  <a href="#audio">Audio</a>
+  <a href="#video">Video</a>
+  <a href="#formularios">Formularios</a>
+  <a href="#enlaces">Enlaces</a>
+</nav>
+
+<section id="saludos">
+  <h2>1. Saludos y presentaciones (Greetings)</h2>
+  <table>
+    <tr><th>Inglés</th><th>Español</th><th>Audio</th></tr>
+    <tr><td>Hello / Hi</td><td>Hola</td><td><button onclick="pronunciar('Hello')">🔊</button></td></tr>
+    <tr><td>Good morning</td><td>Buenos días</td><td><button onclick="pronunciar('Good morning')">🔊</button></td></tr>
+    <tr><td>Good afternoon</td><td>Buenas tardes</td><td><button onclick="pronunciar('Good afternoon')">🔊</button></td></tr>
+    <tr><td>Good night</td><td>Buenas noches</td><td><button onclick="pronunciar('Good night')">🔊</button></td></tr>
+    <tr><td>How are you?</td><td>¿Cómo estás?</td><td><button onclick="pronunciar('How are you?')">🔊</button></td></tr>
+    <tr><td>Nice to meet you</td><td>Mucho gusto</td><td><button onclick="pronunciar('Nice to meet you')">🔊</button></td></tr>
+    <tr><td>Goodbye / See you later</td><td>Adiós / Hasta luego</td><td><button onclick="pronunciar('Goodbye, see you later')">🔊</button></td></tr>
+  </table>
+</section>
+
+<section id="colores">
+  <h2>2. Colores (Colors)</h2>
+  <div class="galeria" id="galColores"></div>
+</section>
+
+<section id="numeros">
+  <h2>3. Números (Numbers)</h2>
+  <div class="galeria" id="galNumeros"></div>
+</section>
+
+<section id="animales">
+  <h2>4. Animales (Animals)</h2>
+  <div class="galeria" id="galAnimales"></div>
+</section>
+
+<section id="verbtobe">
+  <h2>5. Verbo "to be" (ser o estar)</h2>
+  <table>
+    <tr><th>Pronombre</th><th>Afirmativo</th><th>Negativo</th><th>Pregunta</th></tr>
+    <tr><td>I</td><td>I am</td><td>I am not</td><td>Am I?</td></tr>
+    <tr><td>You</td><td>You are</td><td>You aren't</td><td>Are you?</td></tr>
+    <tr><td>He / She / It</td><td>He is</td><td>He isn't</td><td>Is he?</td></tr>
+    <tr><td>We / They</td><td>We are</td><td>We aren't</td><td>Are we?</td></tr>
+  </table>
+  <div class="caja">Ejemplo: <b>She is a student.</b> (Ella es estudiante.)
+    <button onclick="pronunciar('She is a student')">🔊</button></div>
+</section>
+
+<section id="presente">
+  <h2>6. Presente simple (Present simple)</h2>
+  <p>Se usa para hábitos y rutinas. Con <b>he, she, it</b> se agrega <b>-s</b> al verbo.</p>
+  <ul>
+    <li>I <b>play</b> soccer. → She <b>plays</b> soccer.</li>
+    <li>We <b>study</b> English. → He <b>studies</b> English.</li>
+    <li>Negativo: I <b>don't</b> like coffee. / He <b>doesn't</b> like coffee.</li>
+    <li>Pregunta: <b>Do</b> you work? / <b>Does</b> she work?</li>
+  </ul>
+  <label for="verbo">Escribe un verbo en infinitivo (ej. play, watch, study):</label>
+  <input type="text" id="verbo">
+  <button onclick="conjugar()">Conjugar para "he/she"</button>
+  <p id="resConj"></p>
+</section>
+
+<section id="fechas">
+  <h2>7. Días de la semana y meses</h2>
+  <p><b>Days:</b> Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday</p>
+  <p><b>Months:</b> January, February, March, April, May, June, July, August, September, October, November, December</p>
+  <button onclick="hoy()">📅 ¿Qué día es hoy en inglés?</button>
+  <button onclick="pronunciar('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday')">🔊 Escuchar días</button>
+</section>
+
+<section id="audio">
+  <h2>8. Audio</h2>
+ 
+  <audio controls>
+    <source src="audio/saludos.mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+  <p>O escribe una frase en inglés y escúchala:</p>
+  <input type="text" id="frase" value="Good morning, how are you?">
+  <button onclick="pronunciar(document.getElementById('frase').value)">▶ Reproducir frase</button>
+</section>
+
+<section id="video">
+  <h2>9. Video</h2>
+ 
+  <video controls>
+    <source src="pastPerfect.mp4" type="video/mp4">
+    Tu navegador no soporta el elemento de video.
+  </video>
+</section>
+
+<section id="formularios">
+  <h2>10. Formularios</h2>
+
+  <h3>a) Registro de alumno</h3>
+  <form id="formRegistro" onsubmit="return registrar(event)">
+    <label for="nombre">Nombre completo:</label>
+    <input type="text" id="nombre" required>
+    <label for="correo">Correo electrónico:</label>
+    <input type="email" id="correo" required>
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" min="5" max="99" required>
+    <label for="pass">Contraseña (mínimo 6 caracteres):</label>
+    <input type="password" id="pass" required>
+    <label for="nivel">Nivel de inglés:</label>
+    <select id="nivel">
+      <option>Principiante (A1)</option>
+      <option>Básico (A2)</option>
+      <option>Intermedio (B1)</option>
+      <option>Avanzado (B2)</option>
+    </select>
+    <fieldset>
+      <legend>Temas que te interesan</legend>
+      <label><input type="checkbox" name="tema" value="Vocabulario"> Vocabulario</label>
+      <label><input type="checkbox" name="tema" value="Gramática"> Gramática</label>
+      <label><input type="checkbox" name="tema" value="Pronunciación"> Pronunciación</label>
+      <label><input type="checkbox" name="tema" value="Conversación"> Conversación</label>
+    </fieldset>
+    <label><input type="checkbox" id="acepto"> Acepto las reglas de la clase</label>
+    <button type="submit">Registrarme</button>
+    <button type="reset" class="sec">Limpiar</button>
+  </form>
+  <p id="resRegistro"></p>
+
+  <h3>b) Examen rápido</h3>
+  <form id="formQuiz" onsubmit="return calificar(event)">
+    <fieldset>
+      <legend>1. "Dog" significa...</legend>
+      <label><input type="radio" name="p1" value="a"> Gato</label>
+      <label><input type="radio" name="p1" value="b"> Perro</label>
+      <label><input type="radio" name="p1" value="c"> Pájaro</label>
+    </fieldset>
+    <fieldset>
+      <legend>2. Completa: She ___ a student.</legend>
+      <label><input type="radio" name="p2" value="a"> am</label>
+      <label><input type="radio" name="p2" value="b"> are</label>
+      <label><input type="radio" name="p2" value="c"> is</label>
+    </fieldset>
+    <fieldset>
+      <legend>3. ¿Cómo se dice "siete" en inglés?</legend>
+      <label><input type="radio" name="p3" value="a"> Seven</label>
+      <label><input type="radio" name="p3" value="b"> Eleven</label>
+      <label><input type="radio" name="p3" value="c"> Seventeen</label>
+    </fieldset>
+    <fieldset>
+      <legend>4. Completa: He ___ English.</legend>
+      <label><input type="radio" name="p4" value="a"> study</label>
+      <label><input type="radio" name="p4" value="b"> studies</label>
+      <label><input type="radio" name="p4" value="c"> studying</label>
+    </fieldset>
+    <button type="submit">Calificar</button>
+    <button type="reset" class="sec" onclick="document.getElementById('resQuiz').textContent=''">Reiniciar</button>
+  </form>
+  <p id="resQuiz"></p>
+
+  <h3>c) Comentarios sobre la clase</h3>
+  <form onsubmit="return enviarComentario(event)">
+    <label for="tipo">Tipo de mensaje:</label>
+    <select id="tipo">
+      <option>Sugerencia</option>
+      <option>Duda</option>
+      <option>Felicitación</option>
+    </select>
+    <label for="coment">Tu mensaje:</label>
+    <textarea id="coment" rows="4" maxlength="200" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+  <p id="resComent"></p>
+</section>
+
+<section id="enlaces">
+  <h2>11. Enlaces útiles</h2>
+  <ul>
+    <li><a href="https://learnenglish.britishcouncil.org/" target="_blank" rel="noopener">British Council – LearnEnglish</a></li>
+    <li><a href="https://www.bbc.co.uk/learningenglish" target="_blank" rel="noopener">BBC Learning English</a></li>
+    <li><a href="https://dictionary.cambridge.org/" target="_blank" rel="noopener">Cambridge Dictionary</a></li>
+    <li><a href="#saludos">Volver al inicio ↑</a></li>
+  </ul>
+</section>
+
+<footer>Hecho con HTML, CSS y JavaScript · Clase de Inglés</footer>
+
+<script>
+  // ---------- Alerta de bienvenida ----------
+  window.onload = function () {
+    alert("Welcome! Bienvenido a la clase de inglés 📘");
+  };
+
+  // ---------- Datos y tarjetas con imágenes ----------
+  function crearImagen(emoji, fondo) {
+    var svg = "<svg xmlns='http://www.w3.org/2000/svg' width='160' height='120'>" +
+      "<rect width='160' height='120' fill='" + fondo + "'/>" +
+      "<text x='80' y='80' font-size='56' text-anchor='middle'>" + emoji + "</text></svg>";
+    return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+  }
+
+  function llenarGaleria(id, items, fondo) {
+    var cont = document.getElementById(id);
+    items.forEach(function (it) {
+      var fig = document.createElement("figure");
+      var img = document.createElement("img");
+      img.src = crearImagen(it[0], fondo);
+      img.alt = it[1];
+      var cap = document.createElement("figcaption");
+      cap.textContent = it[1] + " (" + it[2] + ")";
+      var btn = document.createElement("button");
+      btn.textContent = "🔊";
+      btn.onclick = function () { pronunciar(it[1]); };
+      fig.appendChild(img); fig.appendChild(cap); fig.appendChild(btn);
+      cont.appendChild(fig);
+    });
+  }
+
+  llenarGaleria("galColores", [
+    ["🔴","Red","rojo"],["🔵","Blue","azul"],["🟢","Green","verde"],
+    ["🟡","Yellow","amarillo"],["🟠","Orange","naranja"],["🟣","Purple","morado"]
+  ], "#f1f5f9");
+
+  llenarGaleria("galNumeros", [
+    ["1️⃣","One","uno"],["2️⃣","Two","dos"],["3️⃣","Three","tres"],["4️⃣","Four","cuatro"],
+    ["5️⃣","Five","cinco"],["6️⃣","Six","seis"],["7️⃣","Seven","siete"],
+    ["8️⃣","Eight","ocho"],["9️⃣","Nine","nueve"],["🔟","Ten","diez"]
+  ], "#fef9c3");
+
+  llenarGaleria("galAnimales", [
+    ["🐶","Dog","perro"],["🐱","Cat","gato"],["🐦","Bird","pájaro"],
+    ["🐴","Horse","caballo"],["🐟","Fish","pez"],["🐮","Cow","vaca"]
+  ], "#dcfce7");
+
+  // ---------- Funciones generales ----------
+  function saludar() {
+    var nombre = prompt("What's your name? (¿Cómo te llamas?)");
+    if (nombre) { alert("Hello, " + nombre + "! Nice to meet you 👋"); }
+  }
+
+  function pronunciar(texto) {
+    if (!("speechSynthesis" in window)) { alert("Tu navegador no soporta voz."); return; }
+    var voz = new SpeechSynthesisUtterance(texto);
+    voz.lang = "en-US";
+    speechSynthesis.cancel();
+    speechSynthesis.speak(voz);
+  }
+
+  var oscuro = false;
+  function cambiarTema() {
+    oscuro = !oscuro;
+    document.body.style.background = oscuro ? "#1e293b" : "#f4f7fb";
+    alert(oscuro ? "Dark mode activado 🌙" : "Light mode activado ☀️");
+  }
+
+  // ---------- Present simple ----------
+  function conjugar() {
+    var v = document.getElementById("verbo").value.trim().toLowerCase();
+    var salida = document.getElementById("resConj");
+    if (v === "") { alert("Escribe un verbo primero."); return; }
+    var r;
+    if (/(s|sh|ch|x|z|o)$/.test(v)) { r = v + "es"; }
+    else if (/[^aeiou]y$/.test(v)) { r = v.slice(0, -1) + "ies"; }
+    else { r = v + "s"; }
+    salida.innerHTML = "She/He <b>" + r + "</b>";
+    pronunciar("She " + r);
+  }
+
+  // ---------- Fecha en inglés ----------
+  function hoy() {
+    var dias = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    var meses = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    var d = new Date();
+    var texto = "Today is " + dias[d.getDay()] + ", " + meses[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+    alert(texto);
+    pronunciar(texto);
+  }
+
+  // ---------- Formulario de registro ----------
+  function registrar(e) {
+    e.preventDefault();
+    var nombre = document.getElementById("nombre").value.trim();
+    var pass = document.getElementById("pass").value;
+    var nivel = document.getElementById("nivel").value;
+    var temas = [];
+    document.querySelectorAll("input[name='tema']:checked").forEach(function (c) { temas.push(c.value); });
+
+    if (pass.length < 6) { alert("La contraseña debe tener al menos 6 caracteres."); return false; }
+    if (!document.getElementById("acepto").checked) { alert("Debes aceptar las reglas de la clase."); return false; }
+
+    var salida = document.getElementById("resRegistro");
+    salida.className = "ok";
+    salida.textContent = "✅ Welcome, " + nombre + "! Nivel: " + nivel +
+      ". Temas: " + (temas.length ? temas.join(", ") : "ninguno seleccionado") + ".";
+    alert("Registro exitoso. ¡Bienvenido, " + nombre + "!");
+    return false;
+  }
+
+  // ---------- Examen rápido ----------
+  function calificar(e) {
+    e.preventDefault();
+    var correctas = { p1: "b", p2: "c", p3: "a", p4: "b" };
+    var puntos = 0, sinResponder = 0;
+    for (var p in correctas) {
+      var sel = document.querySelector("input[name='" + p + "']:checked");
+      if (!sel) { sinResponder++; }
+      else if (sel.value === correctas[p]) { puntos++; }
+    }
+    if (sinResponder > 0) { alert("Te faltan " + sinResponder + " pregunta(s) por responder."); return false; }
+    var salida = document.getElementById("resQuiz");
+    salida.className = puntos >= 3 ? "ok" : "mal";
+    salida.textContent = "Calificación: " + puntos + " de 4 (" + (puntos * 25) + "%)";
+    alert(puntos === 4 ? "Excellent! 🎉 ¡Perfecto!" : puntos >= 3 ? "Good job! 👍" : "Keep practicing! 💪 Sigue practicando.");
+    return false;
+  }
+
+  // ---------- Comentarios ----------
+  function enviarComentario(e) {
+    e.preventDefault();
+    var tipo = document.getElementById("tipo").value;
+    var msg = document.getElementById("coment").value.trim();
+    if (confirm("¿Enviar tu " + tipo.toLowerCase() + "?")) {
+      document.getElementById("resComent").innerHTML = "<span class='ok'>Thank you!</span> Tu " +
+        tipo.toLowerCase() + " fue enviada: \"" + msg.replace(/</g, "&lt;") + "\"";
+      document.getElementById("coment").value = "";
+    }
+    return false;
+  }
+</script>
+</body>
+</html>
